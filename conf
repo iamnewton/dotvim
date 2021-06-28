@@ -1,0 +1,130 @@
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" ########## Example .vimrc ##########
+"
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+" Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Multiple Plug commands can be written in a single line using | separators
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-default branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+" Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+" ########## End: Example .vimrc ##########
+
+" Syntax highlighter language pack
+" Chosen because of its completeness for including most languages and it loads
+" on demand, rather than on runtime
+Plug 'sheerun/vim-polyglot'
+
+" File system explorer
+" Chosen over `netrw` because of the varous plugins to customize the side bar
+" and there don't appear to be any good alternatives that are a bit more
+" lightweight
+Plug 'preservim/nerdtree'
+" Adds syntax highlighting to NERDTree based on filetype; visually matches the
+" colors of the vim-devicons to the file type
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Adds icons to plugins, e.g. NERDTree
+" this has to come last after all supported plugins
+Plug 'ryanoasis/vim-devicons'
+
+" Initialize plugin system
+call plug#end()
+
+" vim-plug already includes this
+" (https://github.com/junegunn/vim-plug/tree/fc2813ef4484c7a5c080021ceaa6d1f70390d920#usage)
+" explanataion: https://vi.stackexchange.com/a/10125
+" filetype plugin indent on
+ 
+" vim-plug already includes this
+" (https://github.com/junegunn/vim-plug/tree/fc2813ef4484c7a5c080021ceaa6d1f70390d920#usage)
+" https://alvinalexander.com/linux/vi-vim-editor-syntax-highlighting/
+" syntax on
+
+" ########## DISPLAY ##########
+" Enforce UTF 8 for the vim-devicons to work
+set encoding=UTF-8
+" If using gvim, (https://vim.fandom.com/wiki/Setting_the_font_in_the_GUI)
+" them detect if this setting is there and set the font accordingly
+" otherwise this is likely not needed for console ViM as that is determined by
+" the terminal emulator
+if has ("guifont")
+	set guifont=InputMonoCondensed\ Nerd\ Font\ 16
+endif
+" Enable line numbers
+" Adding a ! at the end of this will toggle on each sourcing of the vimrc file
+set number
+" How many columns of whitespace a \t is worth
+set tabstop=4
+" How many columns of whitespace a "level of indentation" is worth
+set shiftwidth=4
+" Tabs over spaces
+set noexpandtab
+" ########## END: DISPLAY ##########
+
+" ########## SEARCH ##########
+" Enable incremental search
+set incsearch  
+" Enable highlight search
+set hlsearch   
+" ########## END: SEARCH ##########
+
+" ########## DISPLAY ##########
+set termwinsize=12x0   " Set terminal size
+set splitbelow         " Always split below
+set mouse=a            " Enable mouse drag on window splits
+" ########## END: DISPLAY ##########
+
+" Set ViM's :terminal to use the login shell as it appears ViM by default sets
+" it to use non-interactive shell
+" https://stackoverflow.com/a/9092644/1536779
+set shell=bash\ -l
+
+" ########## NERDTREE ##########
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
+" ########## END: NERDTREE ##########
+
+" ########## NERDTREE SYNTAX HIGHLIGHT ##########
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+" ########## END: NERDTREE SYNTAX HIGHLIGHT ##########
+
+" ########## NERDTREE GIT PLUGIN ##########
+" ########## END: NERDTREE GIT PLUGIN ##########
