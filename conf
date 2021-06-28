@@ -36,6 +36,9 @@ call plug#begin('~/.vim/plugged')
 " Plug '~/my-prototype-plugin'
 " ########## End: Example .vimrc ##########
 
+" Seti UI color scheme
+Plug 'trusktr/seti.vim'
+
 " Syntax highlighter language pack
 " Chosen because of its completeness for including most languages and it loads
 " on demand, rather than on runtime
@@ -78,6 +81,10 @@ set encoding=UTF-8
 if has ("guifont")
 	set guifont=InputMonoCondensed\ Nerd\ Font\ 16
 endif
+
+set background=dark
+silent! colorscheme seti
+
 " Enable line numbers
 " Adding a ! at the end of this will toggle on each sourcing of the vimrc file
 set number
