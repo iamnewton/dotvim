@@ -109,6 +109,11 @@ set tabstop=4
 set shiftwidth=4
 " Tabs over spaces
 set noexpandtab
+
+" Set up :terminal display
+set termwinsize=12x0   " Set terminal size
+set splitbelow         " Always split below
+set mouse=a            " Enable mouse drag on window splits
 " ########## END: DISPLAY ##########
 
 " ########## SEARCH ##########
@@ -118,16 +123,17 @@ set incsearch
 set hlsearch   
 " ########## END: SEARCH ##########
 
-" ########## DISPLAY ##########
-set termwinsize=12x0   " Set terminal size
-set splitbelow         " Always split below
-set mouse=a            " Enable mouse drag on window splits
-" ########## END: DISPLAY ##########
+" ########## GENERAL ##########
+" ########## END: GENERAL ##########
 
 " Set ViM's :terminal to use the login shell as it appears ViM by default sets
 " it to use non-interactive shell
 " https://stackoverflow.com/a/9092644/1536779
 set shell=bash\ -l
+
+" trying to start up the terminal on ViM start up
+" and select the other window
+" autocmd VimEnter * terminal
 
 " ########## NERDTREE ##########
 " Start NERDTree and put the cursor back in the other window.
