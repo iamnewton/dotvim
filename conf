@@ -97,8 +97,10 @@ if has ("guifont")
 	set guifont=InputMonoCondensed\ Nerd\ Font\ 16
 endif
 
+" set the color scheme to Seti UI
 set background=dark
 silent! colorscheme seti
+set termguicolors
 
 " Enable line numbers
 " Adding a ! at the end of this will toggle on each sourcing of the vimrc file
