@@ -177,6 +177,11 @@ let g:coc_global_extensions = [ 'coc-css', 'coc-git', 'coc-highlight', 'coc-html
 autocmd CursorHold * silent call CocActionAsync('highlight')
 " ########## END: COC-HIGHLIGHT ##########
 
+" ########## KEY MAPPINGS ##########
+" Insert date by pressing <F3>
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
 " make coc.nvim format your code on <cr> 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " use <tab> and <s-tab> to navigate the coc.nvim completion list
