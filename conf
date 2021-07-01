@@ -66,6 +66,9 @@ Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Autocomplete with VSCode extension ecosystem
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
 " Adds icons to plugins, e.g. NERDTree
 " this has to come last after all supported plugins
 Plug 'ryanoasis/vim-devicons'
@@ -148,3 +151,21 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 
 " ########## NERDTREE GIT PLUGIN ##########
 " ########## END: NERDTREE GIT PLUGIN ##########
+"
+" ########## COC.NVIM ##########
+let g:coc_global_extensions = [ 'coc-css', 'coc-git', 'coc-highlight', 'coc-html', 'coc-json', 'coc-sh', 'coc-svg', 'coc-tsserver', 'coc-yaml' ]
+" ########## END: COC.NVIM ##########
+
+" ########## COC-HIGHLIGHT ##########
+" enable highlight current symbol on CursorHold,
+" not seeing the effects to this at this moment
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" ########## END: COC-HIGHLIGHT ##########
+
+" make coc.nvim format your code on <cr> 
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" use <tab> and <s-tab> to navigate the coc.nvim completion list
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" ########## END: KEY MAPPINGS ##########
