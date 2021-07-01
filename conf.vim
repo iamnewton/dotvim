@@ -109,9 +109,9 @@ set termguicolors
 " Enable line numbers
 " Adding a ! at the end of this will toggle on each sourcing of the vimrc file
 set number
-" How many columns of whitespace a \t is worth
+" How many columns of whitespace is a \t is worth
 set tabstop=4
-" How many columns of whitespace a "level of indentation" is worth
+" How many columns of whitespace is a 'level of indentation' is worth
 set shiftwidth=4
 " Tabs over spaces
 set noexpandtab
