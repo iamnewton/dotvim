@@ -69,6 +69,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Autocomplete with VSCode extension ecosystem
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
 " Adds icons to plugins, e.g. NERDTree
 " this has to come last after all supported plugins
 Plug 'ryanoasis/vim-devicons'
