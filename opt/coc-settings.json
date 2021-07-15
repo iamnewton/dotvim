@@ -1,0 +1,5 @@
+{
+	// configure coc.nvim to send diagnostics to ALE, so ALE controls how all 
+	// problems are presented to you 
+	"diagnostic.displayByAle": true
+}
