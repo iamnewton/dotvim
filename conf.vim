@@ -12,9 +12,8 @@ let &runtimepath .= "," . dotvimdir
 runtime conf/general.vim 
 runtime conf/plugins.vim " plugin management (e.g. vim-plug)
 runtime conf/key-mappings.vim " all keyboard mappings, including plugins
-runtime conf/display.vim " layout, which windows open, etc.
 runtime conf/search.vim " search, replace, find
-runtime conf/theme.vim " colors, fonts, etc.
+runtime conf/ui.vim " colors, fonts, layout, which windows open, etc.
 
 " ########## PLUGINS ##########
 runtime conf/plugin.denite.vim
