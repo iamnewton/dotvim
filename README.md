@@ -29,13 +29,13 @@ Ensure that you have the following dependencies installed on your system.  If yo
 * Automatic install of all plugins and plugin manager on launch
 * File explorer always open to showcase directory structure, but focus on primary window
 * Syntax highlighting, over 50 languages, loaded on-demand
-* Autocomplete all the things, but mostly Bash, CSS, Git, HTML, JS, JSON, SVG, YAML
+* Autocomplete "all the things", specifically Bash, CSS, Git, HTML, JS, JSON, SVG, YAML
 * [Git](https://git-scm.com)/[GitHub](https://github.com) integration
 
 ## Plug Ins
 
 * [vim-plug](https://github.com/junegunn/vim-plug) - plugin manager
-* [NERDTree](https://github.com/preservim/nerdtree) - file explorer with a few plugins to decorate the source list with [icons](https://github.com/ryanoasis/vim-devicons) and [git status](https://github.com/Xuyuanp/nerdtree-git-plugin)
+* [NERDTree](https://github.com/preservim/nerdtree) - file explorer with plugins to decorate the source list with [icons](https://github.com/ryanoasis/vim-devicons) and [git status](https://github.com/Xuyuanp/nerdtree-git-plugin)
 * [Polyglot](https://github.com/sheerun/vim-polyglot) - syntax highlighter
 * [C.O.C.](https://github.com/neoclide/coc.nvim) - autocomplete/code complete
 * [Fugitive](https://github.com/tpope/vim-fugitive)/[rhubarb.vim](https://github.com/tpope/vim-rhubarb) - Git and GitHub wrapper (respectively)
@@ -44,6 +44,6 @@ Ensure that you have the following dependencies installed on your system.  If yo
 
 ## Acknowledgements
 
-Inspiration and code was taken from many sources, including (in lexicographical order):
+Inspiration and code was taken from the following sources (in lexicographical order):
 
 * [How to Turn Vim Into a Lightweight IDE by Dane Bulat](https://dane-bulat.medium.com/how-to-turn-vim-into-a-lightweight-ide-6185e0f47b79)
