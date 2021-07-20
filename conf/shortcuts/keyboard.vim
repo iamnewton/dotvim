@@ -1,6 +1,14 @@
+" Change mapleader
+let mapleader = ","
+let maplocalleader = "<"
+
 " Insert date by pressing <F3>
 nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+" indent lines of code in visual mode
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 " Map ctrl + k|j to move lines of code around
 inoremap <C-k> <Esc>:m .-2<CR>==gi
@@ -8,7 +16,7 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 vnoremap <C-k> :m '<-2<CR>gv=gv
 vnoremap <C-j> :m '>+1<CR>gv=gv
 
-" make coc.nvim format your code on <cr> 
+" make coc.nvim format your code on <cr>
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " use <tab> and <s-tab> to navigate the coc.nvim completion list
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion

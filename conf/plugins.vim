@@ -48,15 +48,16 @@ call plug#begin('~/.vim/plugged')
 " Plug '~/my-prototype-plugin'
 " ########## End: Example .vimrc ##########
 
-" Color scheme
-Plug 'trusktr/seti.vim'
-
 " Syntax highlighter language pack
-" Chosen because of its completeness for including most languages and it loads
-" on demand, rather than on runtime
-Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot' " Chosen because of its completeness for including most languages and it loads on demand, rather than on runtime
+Plug 'iamnewton/words-to-avoid.vim' " highlights tech words to avoid
+Plug 'jdiamond/UniCycle' " inserts smart quotes
+Plug 'editorconfig/editorconfig-vim' " EditorConfig
+Plug 'prettier/vim-prettier', { 'do': 'npm install' } " Prettier
 
 " Fuzzy file finding, file management, project searching
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 if has('nvim')
   Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -66,13 +67,8 @@ else
 endif
 
 " File system explorer
-" Chosen over `netrw` because of the varous plugins to customize the side bar
-" and there don't appear to be any good alternatives that are a bit more
-" lightweight
-Plug 'preservim/nerdtree'
-" Adds syntax highlighting to NERDTree based on filetype; visually matches the
-" colors of the vim-devicons to the file type
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdtree' " Chosen over `netrw` because of the varous plugins to customize the side bar and there don't appear to be any good alternatives that are a bit more lightweight
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " Adds syntax highlighting to NERDTree based on filetype; visually matches the colors of the vim-devicons to the file type
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Autocomplete with VSCode extension ecosystem
@@ -84,9 +80,10 @@ Plug 'tpope/vim-fugitive' " git wrapper
 Plug 'tpope/vim-rhubarb' " github wrapper
 Plug 'airblade/vim-gitgutter' " shows git diff markers, preview hunks
 
-" Adds icons to plugins, e.g. NERDTree
-" this has to come last after all supported plugins
-Plug 'ryanoasis/vim-devicons'
+" UI
+Plug 'luochen1990/rainbow' " shows levels of parentheses in different colors
+Plug 'sonph/onehalf', { 'rtp': 'vim' } " Color scheme
+Plug 'ryanoasis/vim-devicons' " Adds icons to plugins, e.g. NERDTree; this has to come last after all supported plugins
 
 " Initialize plugin system
 call plug#end()
