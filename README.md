@@ -13,7 +13,7 @@ _[Seti UI color scheme](https://github.com/jesseweed/seti-ui) with [Input Mono C
 :warning: This will overwrite your existing `.vim` directory.
 
 ```bash
-$ /bin/bash -c "$(curl -#fL https://raw.githubusercontent.com/iamnewton/dotvim/main/bin/install.sh)"
+$ /bin/bash -c "$(curl -#fL https://raw.githubusercontent.com/iamnewton/dotvim/main/bin/dotvim)"
 ```
 
 ### Requirements

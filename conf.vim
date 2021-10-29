@@ -27,6 +27,6 @@ runtime conf/plugins/denite.vim
 runtime conf/plugins/devicons.vim
 runtime conf/plugins/editorconfig.vim
 runtime conf/plugins/nerdtree.vim
-runtime conf/plugins/prettier.vim
+" runtime conf/plugins/prettier.vim
 runtime conf/plugins/unicycle.vim
 " ########## PLUGINS: END ##########
