@@ -41,17 +41,10 @@ if ! type -P 'brew' &> /dev/null; then
 	[[ $? ]] && print_success "Homebrew installed"
 fi
 
-if ! type -P 'vim' &> /dev/null; then
-	# If we're on Linux, insert brew into the path temporarily to be able to use later
-	if [[ "$OS" == "linux"  ]]; then
-		print_process "Sourcing Homebrew to PATH"
-		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-		brew install vim
-	fi
-
-	if [[ "$OS" == "darwin" ]]; then
-		brew install vim --HEAD --with-override-system-vi
-	fi
+# If we're on Linux, insert brew into the path temporarily to be able to use later
+if [[ "$OS" == "linux"  ]]; then
+	print_process "Sourcing Homebrew to PATH"
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # If missing, download and extract the dotpackages repository
@@ -114,6 +107,10 @@ if ! [[ -d "$INSTALL_DIR/.git" ]]; then
 
 	[[ $? ]] && print_success "Repository has been updated"
 fi
+
+# install vim
+print_process "Installing vim"
+brew install vim
 
 print_process "Synchronizing .vim directory and symlinking runcom (.vimrc) file"
 rsync -avz --quiet "$INSTALL_DIR/conf" "$HOME/.vim"
