@@ -40,6 +40,10 @@ Ensure that you have the following dependencies installed on your system.  If yo
 * [C.O.C.](https://github.com/neoclide/coc.nvim) - autocomplete/code complete
 * [Fugitive](https://github.com/tpope/vim-fugitive)/[rhubarb.vim](https://github.com/tpope/vim-rhubarb) - Git and GitHub wrapper (respectively)
 
+## Gotchas
+
+* If you get the following error, `'redrawtime' exceeded, syntax highlighting disabled` and the code loses all syntax highlighting, then set the following command: `:set regexpengine=2`.
+
 * * *
 
 ## Acknowledgements
