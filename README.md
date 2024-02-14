@@ -42,7 +42,7 @@ Ensure that you have the following dependencies installed on your system.  If yo
 
 ## Gotchas
 
-* If you get the following error, `'redrawtime' exceeded, syntax highlighting disabled` and the code loses all syntax highlighting, then set the following command: `:set regexpengine=2`.
+* If you get the following error, `'redrawtime' exceeded, syntax highlighting disabled` and the code loses all syntax highlighting, then set the following command: `:set regexpengine=2` [source](https://github.com/fatih/vim-go/issues/3171#issuecomment-804504569).
 
 * * *
 
