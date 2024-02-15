@@ -169,3 +169,9 @@ if has('statusline')
 	" set cmdheight=2
 endif
 " ########## STATUS LINE: END ##########
+
+" fixes issue where syntax stops highlighting (https://github.com/fatih/vim-go/issues/3171#issuecomment-804504569)
+if has ('regexpengine')
+	" sets the "NFA engine" syntax highlighting engine for vim-go: https://github.com/fatih/vim-go/issues/72
+	set regexpengine=2
+endif
